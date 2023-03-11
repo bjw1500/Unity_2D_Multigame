@@ -1,0 +1,35 @@
+{
+  "skills": [
+    {
+      "id": "0",
+      "name": "NormalAttack",
+      "cooldown": "1",
+      "damage": "5",
+      "attackType": "0"
+    },
+    {
+      "id": "1",
+      "name": "BowAttack",
+      "cooldown": "1",
+      "damage": "5",
+      "attackType": "1"
+    },
+    {
+      "id": "2",
+      "name": "MagicAttack",
+      "cooldown": "1",
+      "damage": "5",
+      "attackType": "2"
+    },
+    {
+      "id": "3",
+      "name": "HealAttack",
+      "cooldown": "1",
+      "damage": "10",
+      "attackType": "3"
+    }
+  ]
+
+
+
+}

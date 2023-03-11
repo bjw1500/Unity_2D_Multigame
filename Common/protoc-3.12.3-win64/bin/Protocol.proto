@@ -1,0 +1,213 @@
+syntax = "proto3";
+
+package Protocol;
+import "google/protobuf/timestamp.proto";
+option csharp_namespace = "Google.Protobuf.Protocol";
+
+enum MsgId {
+  S_ENTER_GAME = 0;
+  S_LEAVE_GAME = 1;
+  S_SPAWN = 2;
+  C_SPAWN = 3;
+  S_DESPAWN =4;
+  C_DESPAWN = 5;
+  C_MOVE =6;
+  S_MOVE =7;
+  C_SKILL =8;
+  S_SKILL = 9;
+  S_CHANGE_HP = 10;
+  C_CHANGE_HP = 11;
+  S_DIE = 12;
+  S_ENTER_WAITING_ROOM = 13;
+  S_LEAVE_WAITING_ROOM = 14;
+  S_START_GAME = 15;
+  C_START_GAME = 16;
+  S_WIN_GAME = 17;
+}
+
+enum WorldObject
+{
+	Object_None = 0;
+    Player= 1;
+    NPC = 2;
+}
+
+enum AttackType
+{
+    Normal = 0;
+    Bow = 1;
+    Magic = 2;
+	Heal = 3;
+}
+
+enum UnitType
+{
+    Unknown = 0;
+    Human = 1;
+    Orc = 2;
+	Building = 3;
+	Resource = 4;
+	Worker = 5;
+	Horse = 6;
+	Healer = 7;
+}
+
+enum CreatureState
+{
+	IDLE =0;
+	MOVING = 1;
+	ATTACK = 2;
+	DEAD = 3;
+}
+
+enum MoveDir
+{
+    None = 0;
+    Up = 1;
+    Down =2;
+    Left = 3;
+    Right =4;
+}
+
+
+message S_EnterGame {
+  PlayerInfo player = 1;
+
+}
+
+message S_LeaveGame{
+	
+}
+
+message S_Spawn{
+	repeated ObjectInfo info = 1;
+}
+
+message C_Spawn{
+	repeated ObjectInfo info = 1;
+}
+
+message S_Despawn{
+	repeated ObjectInfo info = 1;
+}
+
+message C_Despawn{
+	repeated ObjectInfo info = 1;
+}
+
+message C_Move{
+	int32 unitId = 1;
+	PositionInfo posInfo = 2;
+}
+
+message S_Move{
+	int32 playerId = 1;
+	int32 unitId = 2;
+	PositionInfo posInfo = 3;
+}
+
+message C_Skill{
+	ObjectInfo info = 1;
+	int32 skillid = 2;
+	
+
+}
+
+message S_Skill{
+	ObjectInfo info = 1;
+	int32 skilId =2;
+}
+
+message S_ChangeHp{
+	int32 unitId = 1;
+	int32 hp = 2;
+}
+
+message C_ChangeHp{
+	int32 playerId = 1;
+	int32 unitId = 2;
+	ObjectInfo attacker = 3;
+	SkillInfo attackSkill = 4;
+}
+
+message S_Die{
+	int32 unitId = 1;
+	ObjectInfo attacker = 2;
+
+}
+
+message S_EnterWaitingRoom {
+  PlayerInfo player = 1;
+  bool myPlayer = 2;
+
+}
+
+message S_LeaveWaitingRoom{
+ PlayerInfo player = 1;
+
+}
+
+message S_StartGame {
+	int32 slot = 1;
+
+
+}
+
+message C_StartGame {
+	int32 slot = 1;
+
+}
+
+
+message S_WinGame{
+	int32 win = 1;
+
+}
+
+
+message PlayerInfo{
+	string name =1;
+	int32 playerId = 2;
+	int32 teamId = 3;
+	int32 slot = 4;
+}
+message PositionInfo{
+	CreatureState State = 1;
+	MoveDir moveDir = 2;
+	int32 posX = 3;
+	int32 posY = 4;
+	int32 destinationX = 5;
+	int32 destinationY = 6;
+}
+message StatInfo{
+	string name = 1;
+	int32 hp =2;
+	int32 maxHp=3;
+	int32 cost = 4;
+	int32 armor =5;
+	int32 damage = 6;
+	float speed =7;
+	float attackSpeed =8;
+	float skillRange=9;
+	float searchRange =10;
+	AttackType attackType = 11;
+	UnitType unitType = 12;
+}
+
+message SkillInfo{
+	int32 skillId = 1;
+}
+
+message ObjectInfo{
+	string name = 1;
+	int32 unitId = 2;
+	int32 teamId = 3;
+	WorldObject worldType = 4;
+	int32 targetId = 5;
+	int32 attackerId = 6;
+	PlayerInfo player= 8;
+	PositionInfo posInfo =9;
+	StatInfo statInfo = 10;
+}
+
+

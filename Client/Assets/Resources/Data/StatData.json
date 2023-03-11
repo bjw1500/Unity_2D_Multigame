@@ -1,0 +1,105 @@
+{
+  "stats": [
+    {
+      "name": "Knight",
+      "hp": "200",
+      "cost": "5",
+      "maxHp": "200",
+      "armor": "5",
+      "damage": "20",
+      "speed": "5",
+      "attackSpeed": "1",
+      "skillRange": "1",
+      "searchRange": "10",
+      "attackType": "0",
+      "unitType": "1"
+    },
+    {
+      "name": "RoyalKnight",
+      "hp": "200",
+      "maxHp": "200",
+      "cost": "10",
+      "armor": "5",
+      "damage": "20",
+      "speed": "5",
+      "attackSpeed": "1",
+      "skillRange": "1",
+      "searchRange": "10",
+      "attackType": "0",
+      "unitType": "6"
+    },
+    {
+      "name": "Archer",
+      "hp": "200",
+      "maxHp": "200",
+      "cost": "7",
+      "armor": "5",
+      "damage": "20",
+      "speed": "5",
+      "attackSpeed": "1",
+      "skillRange": "5",
+      "searchRange": "10",
+      "attackType": "1",
+      "unitType": "1"
+    },
+    {
+      "name": "Worker",
+      "hp": "200",
+      "maxHp": "200",
+      "cost": "0",
+      "armor": "5",
+      "damage": "0",
+      "speed": "5",
+      "attackSpeed": "1",
+      "skillRange": "1",
+      "searchRange": "10",
+      "attackType": "0",
+      "unitType": "5"
+    },
+    {
+      "name": "Healer",
+      "hp": "200",
+      "maxHp": "200",
+      "cost": "7",
+      "armor": "5",
+      "damage": "5",
+      "speed": "5",
+      "attackSpeed": "1",
+      "skillRange": "5",
+      "searchRange": "10",
+      "attackType": "3",
+      "unitType": "7"
+    },
+    {
+      "name": "Base Blue",
+      "hp": "200",
+      "maxHp": "200",
+      "cost": "0",
+      "armor": "5",
+      "damage": "20",
+      "speed": "5",
+      "attackSpeed": "1",
+      "skillRange": "1",
+      "searchRange": "10",
+      "attackType": "0",
+      "unitType": "3"
+    },
+    {
+      "name": "Mineral",
+      "hp": "1000",
+      "maxHp": "200",
+      "cost": "0",
+      "armor": "5",
+      "damage": "20",
+      "speed": "5",
+      "attackSpeed": "0",
+      "skillRange": "1",
+      "searchRange": "10",
+      "attackType": "0",
+      "unitType": "4"
+    }
+  ]
+
+
+
+}
